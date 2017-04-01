@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @patient.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @patient.last_name %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @patient.dob %>
+</p>
+
+<p>
+  <strong>Admitted:</strong>
+  <%= @patient.admitted %>
+</p>
+
+<p>
+  <strong>Discharged:</strong>
+  <%= @patient.discharged %>
+</p>
+
+<p>
+  <strong>Hospital:</strong>
+  <%= @patient.hospital %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @patient.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @patient.phone %>
+</p>
+
+<p>
+  <strong>Injury:</strong>
+  <%= @patient.injury %>
+</p>
+
+<p>
+  <strong>Infection:</strong>
+  <%= @patient.infection %>
+</p>
+
+<p>
+  <strong>Observation:</strong>
+  <%= @patient.observation %>
+</p>
+
+<!-- Display the requests of a patient -->
+<h2>Requests</h2>
+<% @patient.requests.each do |request| %>
+<p>
+<b>Request details:</b>
+<%= request.details %>
+</p>
+<% end %>
+<%= link_to 'Edit Patient', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %> |
+<%= link_to 'Show Requests', patient_requests_path(@patient) %>

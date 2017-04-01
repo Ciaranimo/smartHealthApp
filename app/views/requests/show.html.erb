@@ -1,0 +1,12 @@
+<h1>Review in <%= @patient.first_name %> <%= @patient.last_name %></h1>
+<p>
+<b>Review details:</b>
+<%= @request.details %>
+</p>
+
+<p>
+<b>Review date:</b>
+<%= @request.date %>
+</p>
+<%= link_to 'Edit', edit_patient_request_path(@patient, @request) %> |
+<%= link_to 'Back', patient_requests_path(@patient) %>
