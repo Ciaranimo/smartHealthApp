@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<!-- Search Form -->
-<%= form_tag(patients_path, :method => "get") do %>
-  <%= text_field_tag :search, nil, :placeholder => "Search patients by lastname" %>
-  <%= submit_tag "Search" %>
-<% end %>
 
+<div class="container">
+  <!-- Search Form -->
+  <%= form_tag(patients_path, :method => "get") do %>
+    <%= text_field_tag :search, nil, :placeholder => "Search by last name" %>
+    <%= submit_tag "Search" %>
+  <% end %>
 <h1>Patients</h1>
-
-<table>
+<div class=container>
+<table class=table-hover>
   <thead>
     <tr>
       <th>First name</th>
@@ -47,7 +48,9 @@
     <% end %>
   </tbody>
 </table>
+<div>
 
 <br>
 
 <%= link_to 'New Patient', new_patient_path %>
+</div>
