@@ -41,10 +41,9 @@
         <td><%= patient.injury %></td>
         <td><%= patient.infection %></td>
         <td><%= patient.observation %></td>
-
         <td><%= link_to 'Show', patient %></td>
-
-        <% if current_user.admin? %> <!--only allow user to use if admin --> 
+<!--only allow user to use if admin -->
+        <%= if current_user.admin? %> 
         <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
         <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
