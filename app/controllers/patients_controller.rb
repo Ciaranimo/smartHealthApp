@@ -1,6 +1,9 @@
 class PatientsController < ApplicationController
-  before_filter :authenticate_user!
-  before_action :set_patient, only: [:show, :edit, :update, :destroy]
+
+before_filter :authenticate_user!
+before_filter :ensure_admin, :only => [:edit, :destroy]
+
+before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
   # GET /patients
   # GET /patients.json
@@ -82,5 +85,11 @@ class PatientsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
       params.require(:patient).permit(:first_name, :last_name, :dob, :admitted, :discharged, :hospital, :address, :phone, :injury, :infection, :observation)
+    end
+    # restricit functionality to Admin only
+    def ensure_admin
+      unless current_user && current_user.admin?
+        render :text => "Access Error Message", :status => :unauthorized
+      end
     end
 end
