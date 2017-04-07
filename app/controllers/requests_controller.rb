@@ -28,7 +28,7 @@ def create
 # Populate an request associate with patient 1 with form data
 # Patient will be associated with the request
 # @request = @patient.requests.build(params.require(:request).permit!)
-@request = @patient.requests.build(params.require(:request).permit(:details))
+@request = @patient.requests.build(params.require(:request).permit(:details, :date))
 if @request.save
 # Save the request successfully
 redirect_to patient_request_url(@patient, @request)
@@ -48,7 +48,7 @@ end
 def update
 @patient = Patient.find(params[:patient_id])
 @request = Request.find(params[:id])
-if @request.update_attributes(params.require(:request).permit(:details))
+if @request.update_attributes(params.require(:request).permit(:details, :date))
 # Save the request successfully
 redirect_to patient_request_url(@patient, @request)
 else
