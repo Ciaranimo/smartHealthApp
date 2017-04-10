@@ -1,4 +1,5 @@
 class PatientsController < ApplicationController
+  require 'patient_decorator'
 
 before_filter :authenticate_user!
 before_filter :ensure_admin, :only => [:edit, :destroy]
@@ -41,6 +42,25 @@ before_action :set_patient, only: [:show, :edit, :update, :destroy]
   def create
     @patient = Patient.new(patient_params)
 
+    myPatient = BasicPatient.new(150, @patient.infection, @patient.injury)
+
+    if
+      params[:patient][:blood].to_s.length > 0 then myPatient = BloodDecorator.new(myPatient)
+    end
+
+    if
+      params[:patient][:physio].to_s.length > 0 then myPatient = PhysioDecorator.new(myPatient)
+    end
+
+    if
+      params[:patient][:pain].to_s.length > 0 then myPatient = PainMedicationDecorator.new(myPatient)
+    end
+
+
+    ## populate the cost and the description details
+    @patient.cost = myPatient.cost
+    @patient.observation = myPatient.details
+
     respond_to do |format|
       if @patient.save
         format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
@@ -82,7 +102,7 @@ before_action :set_patient, only: [:show, :edit, :update, :destroy]
       @patient = Patient.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Never trust parameters from the spatienty internet, only allow the white list through.
     def patient_params
       params.require(:patient).permit(:first_name, :last_name, :dob, :admitted, :discharged, :hospital, :address, :phone, :injury, :infection, :cost, :observation)
     end

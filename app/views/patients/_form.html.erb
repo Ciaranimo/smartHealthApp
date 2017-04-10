@@ -70,6 +70,20 @@
     <%= f.text_field :cost %>
   </div>
 
+
+<div class="field"> Blood:
+<%= check_box_tag 'patient[blood]', 'blood' %>
+</div>
+
+<div class="field"> Physio:
+<%= check_box_tag 'patient[physio]', 'physio' %>
+</div>
+
+<div class="field"> Pain medication: 
+<%= check_box_tag 'patient[pain]', 'pain' %>
+</div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
