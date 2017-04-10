@@ -84,7 +84,7 @@ before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:first_name, :last_name, :dob, :admitted, :discharged, :hospital, :address, :phone, :injury, :infection, :observation)
+      params.require(:patient).permit(:first_name, :last_name, :dob, :admitted, :discharged, :hospital, :address, :phone, :injury, :infection, :cost, :observation)
     end
     # restricit functionality to Admin only
     def ensure_admin
