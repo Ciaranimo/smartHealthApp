@@ -65,9 +65,10 @@
     <%= f.label :observation %>
     <%= f.text_area :observation %>
   </div>
+
   <div class="field">
     <%= f.label :cost %>
-    <%= f.text_field :cost %>
+    <%= f.number_field :cost %>
   </div>
 
 
@@ -79,7 +80,7 @@
 <%= check_box_tag 'patient[physio]', 'physio' %>
 </div>
 
-<div class="field"> Pain medication: 
+<div class="field"> Pain medication:
 <%= check_box_tag 'patient[pain]', 'pain' %>
 </div>
 
