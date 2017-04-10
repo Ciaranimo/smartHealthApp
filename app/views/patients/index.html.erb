@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 
+
 <div class="container">
   <!-- Search Form -->
   <%= form_tag(patients_path, :method => "get") do %>
@@ -8,8 +9,8 @@
     <%= submit_tag "Search" %>
   <% end %>
 <h1>Patients</h1>
-<div class=container>
-<table class=table-hover>
+<div class="table-responsive">
+<table class="table table-hover">
   <thead>
     <tr>
       <th>First name</th>

@@ -6,6 +6,7 @@ before_filter :ensure_admin, :only => [:edit, :destroy]
 
 before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
+
   # GET /patients
   # GET /patients.json
   def index
@@ -21,6 +22,8 @@ before_action :set_patient, only: [:show, :edit, :update, :destroy]
       # order all rows descending by created_at
       @patients = @patients.order("created_at DESC")
     end
+
+
   end
 
   # GET /patients/1
