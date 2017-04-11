@@ -7,8 +7,17 @@
   <%= form_tag(patients_path, :method => "get") do %>
     <%= text_field_tag :search, nil, :placeholder => "Search by last name" %>
     <%= submit_tag "Search" %>
+    <% if user_signed_in? %>
+      <%= button_to'New Patient', new_patient_path, :class => "btn btn-info", :method => :get  %>
+
+    <% end %>
   <% end %>
+
+  <div class="container">
 <h1>Patients</h1>
+
+
+</div>
 <div class="table-responsive">
 <table class="table table-hover">
   <thead>
@@ -55,10 +64,8 @@
     <% end %>
   </tbody>
 </table>
-<div>
+</div>
 
 <br>
-  <% if user_signed_in? %>
-    <%= link_to 'New Patient', new_patient_path %>
-  <% end %>
+
 </div>
