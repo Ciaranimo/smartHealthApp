@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-  before_filter :authenticate_user!
+before_filter :ensure_admin, :only => [:edit, :destroy]
+
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   #get user profile if this method called, or get redirect to create new one
@@ -11,6 +12,12 @@ class ProfilesController < ApplicationController
   @profile = Profile.find_by_user_id(current_user.id)
   redirect_to "/profiles/#{@profile.id}"
   end
+  end
+
+  def ensure_admin
+    unless current_user && current_user.admin?
+      render :text => "Access Error Message", :status => :unauthorized
+    end
   end
 
   # GET /profiles

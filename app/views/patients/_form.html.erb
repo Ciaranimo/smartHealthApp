@@ -1,3 +1,9 @@
+<div class="container">
+
+
+
+<div class="panel panel-default patient-form-left">
+  <div class="panel-body">
 <%= form_for(patient) do |f| %>
   <% if patient.errors.any? %>
     <div id="error_explanation">
@@ -38,7 +44,7 @@
 
   <div class="field">
     <%= f.label :hospital %>
-    <%= f.text_field :hospital %>
+    <%= f.select(:hospital, Patient::HOSPITAL_LIST) %>
   </div>
 
   <div class="field">
@@ -70,8 +76,11 @@
     <%= f.label :cost %>
     <%= f.number_field :cost %>
   </div>
+</div>
+</div>
 
-
+<div class="panel panel-default patient-form-right">
+  <div class="panel-body">
 <div class="field"> Blood:
 <%= check_box_tag 'patient[blood]', 'blood' %>
 </div>
@@ -83,9 +92,11 @@
 <div class="field"> Pain medication:
 <%= check_box_tag 'patient[pain]', 'pain' %>
 </div>
-
+</div>
+</div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

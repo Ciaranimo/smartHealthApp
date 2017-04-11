@@ -1,5 +1,6 @@
 <div class="container">
 <%= form_for(profile) do |f| %>
+
   <% if profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -24,7 +25,7 @@
 
   <div class="field">
     <%= f.label :hospital %>
-    <%= f.text_field :hospital %>
+    <%= f.select(:hospital, Profile::HOSPITAL_LIST) %>
   </div>
 
   <div class="field">
@@ -35,5 +36,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-  </div>
 <% end %>
+</div>

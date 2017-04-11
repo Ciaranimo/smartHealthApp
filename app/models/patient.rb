@@ -7,4 +7,6 @@ class Patient < ApplicationRecord
     Patient.where("last_name = ?", search_for)
   end
 
+  HOSPITAL_LIST = ["Beaumont", "St. Vincents", "St. James", "Galway University", "Sligo", "Cork", "Mater", "Rotunda"]
+
 end

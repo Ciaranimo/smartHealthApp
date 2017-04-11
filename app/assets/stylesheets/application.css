@@ -14,11 +14,15 @@
  *= require_self
  */
  .jumbotron {
- background-image: url("http://www.skykiwi.com/d/file/news/na/zh/2012-07-31/277d8fee37916c76b91de78cd6019437.jpg");
+ background-image: url("http://www.abetteryou-llc.com/wp-content/uploads/2014/04/medical-services.jpg");
  background-size: cover;
  min-height: 500px;
 margin-top: auto;
+
 }
 h1 {
     color: white;
+}
+.signed-in{
+  float: right;
 }
