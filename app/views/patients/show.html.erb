@@ -1,4 +1,9 @@
 <div class ='container'>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Patient</div>
+
+  <div class="panel-body">
   <p id="notice"><%= notice %></p>
 
   <p>
@@ -60,9 +65,12 @@
     <strong>Observation:</strong>
     <%= @patient.observation %>
   </p>
-
+</div>
+</div>
   <!-- Display the requests of a patient -->
-  <h2>Requests</h2>
+  <div class="panel panel-default">
+  <div class="panel-heading">Requests</div>
+  <div class="panel-body">
   <% @patient.requests.each do |request| %>
   <p>
   <b>Request details:</b>
@@ -72,4 +80,6 @@
   <%= link_to 'Edit Patient', edit_patient_path(@patient) %> |
   <%= link_to 'Back', patients_path %> |
   <%= link_to 'Show Requests', patient_requests_path(@patient) %>
+</div>
+</div>
 </div>

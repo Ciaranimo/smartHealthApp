@@ -1,8 +1,11 @@
 <div class="container">
 
+  <div class="panel panel-default">
+    <div class="panel-body">
 <h1>Requests in <%= @patient.first_name %> <%= @patient.last_name %></h1>
 <div class="table-responsive">
 <table class="table table-hover">
+
 <tr>
 <th>Request details</th>
 </tr>
@@ -23,4 +26,6 @@
 <br />
 <%= link_to 'New request', new_patient_request_path(@patient) %>
 <%= link_to 'Back to Patient', @patient %>
+</div>
+</div>
 </div>
