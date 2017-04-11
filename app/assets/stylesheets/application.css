@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ .jumbotron {
+ background-image: url("http://www.skykiwi.com/d/file/news/na/zh/2012-07-31/277d8fee37916c76b91de78cd6019437.jpg");
+ background-size: cover;
+ min-height: 500px;
+margin-top: auto;
+}
+h1 {
+    color: white;
+}
