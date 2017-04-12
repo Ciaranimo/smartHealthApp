@@ -1,7 +1,7 @@
 class PatientsController < ApplicationController
   require 'patient_decorator'
   require 'my_logger'
-
+  
 before_filter :authenticate_user!
 before_filter :ensure_admin, :only => [:edit, :destroy]
 
