@@ -1,6 +1,6 @@
 require 'singleton'
-class MyLogger include
-  Singleton
+class MyLogger
+  include Singleton
   def initialize
     @log = File.open("mylog.txt", "a")
   end
