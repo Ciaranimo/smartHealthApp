@@ -1,6 +1,7 @@
 
 <%= form_for(profile) do |f| %>
 <div class="container">
+  
   <% if profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -16,7 +17,7 @@
     <div class="panel-heading">Profile</div>
     <div class="panel-body">
   <div class="field">
-    
+
     <%= f.label :firstname %>
     <%= f.text_field :firstname %>
   </div>
