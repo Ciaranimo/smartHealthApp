@@ -10,18 +10,11 @@ before_action :set_patient, only: [:show, :edit, :update, :destroy]
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
 
-    # search functionality
-    if params[ :search]
-      # select all patients that match the search patterns
-      @patients = Patient.search(params[ :search])
-      # order the selected rows (if any) ascending by created_at field
-      @patients = @patients.order("created_at ASC")
-    else
-      # order all rows descending by created_at
-      @patients = @patients.order("created_at DESC")
-    end
+    @ransack = Patient.ransack(params[:q])
+    @patients = @ransack.result
+
+
 
 
   end
