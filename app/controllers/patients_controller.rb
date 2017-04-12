@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
   require 'patient_decorator'
+  require 'my_logger'
 
 before_filter :authenticate_user!
 before_filter :ensure_admin, :only => [:edit, :destroy]
@@ -13,9 +14,6 @@ before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
     @ransack = Patient.ransack(params[:q])
     @patients = @ransack.result
-
-
-
 
   end
 
@@ -56,6 +54,11 @@ before_action :set_patient, only: [:show, :edit, :update, :destroy]
     ## populate the cost and the description details
     @patient.cost = myPatient.cost
     @patient.observation = myPatient.details
+
+    # retrieve the instance/object of the MyLogger class
+    logger = MyLogger.new()
+    logger.logInformation("A new patient requested: " + @patient.observation)
+
 
     respond_to do |format|
       if @patient.save

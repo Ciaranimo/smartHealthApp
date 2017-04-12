@@ -30,3 +30,11 @@ h1 {
   margin-top: auto;
 
 }
+.field{
+  padding: 1em;
+  display:inline-block;
+  margin: auto;
+}
+.actions{
+  
+}

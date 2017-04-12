@@ -12,7 +12,11 @@
       <%= f.text_field :last_name_cont %>
     </div>
     <div class="field">
-      <%= f.label :admitted_gteq, "Date between" %>
+      <%= f.label :hospital_cont, "Hospital contains" %>
+      <%= f.text_field :hospital_cont %>
+    </div>
+    <div class="field">
+      <%= f.label :admitted_gteq, "Admitted between" %>
       <%= f.text_field :admitted_gteq %>
       <%= f.label :admitted_lteq, "and" %>
       <%= f.text_field :admitted_lteq %>
