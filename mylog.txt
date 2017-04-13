@@ -1,2 +1,15 @@
 A new car requested: pain medication: 800. Physio: 500. basic patient; No; Broken Leg: 150
 A new patient requested: Physio: 500. basic patient; Funny Bum; Arse: 150
+A new patient requested: pain medication: 800. basic patient; No; Head: 150
+A new patient requested: Physio: 500. basic patient; No; Broken Arm: 150
+A new patient requested: pain medication: 800. basic patient; ; Face: 150
+A new patient requested: pain medication: 800. basic patient; ; Broken Leg: 150
+A new patient requested: Blood tests: 200. basic patient; Yes; Head: 150
+A new patient requested: Blood tests: 200. basic patient; Yes; Head: 150
+A new patient requested: pain medication: 800. Blood tests: 200. basic patient; ; Head injury: 150
+A new patient requested: pain medication: 800. Blood tests: 200. basic patient; ; Head injury: 150
+A new patient requested: pain medication: 800. Blood tests: 200. basic patient; ; Head injury: 150
+A new patient requested: pain medication: 800. Blood tests: 200. basic patient; ; Head injury: 150
+A new patient requested: basic patient; ; Head injury: 150
+A new patient has been added - test test at 2017-04-13 14:31:23 +0100
+A new patient has been added - test test at 2017-04-13 14:32:47 +0100

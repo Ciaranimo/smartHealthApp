@@ -1,3 +1,4 @@
+
 class ProfilesController < ApplicationController
   before_filter :ensure_admin, :only => [:edit, :destroy]
 

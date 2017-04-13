@@ -3,5 +3,19 @@
 
     <h1 style ="color:white">Smart Health App</h1>
     <p style ="color:white">Welcome to Smart Health App</p>
+    <% if user_signed_in? %>
+
+    <div class="signed-in-main">Signed in as... <%= current_user.email %>
+        (<%= link_to 'Sign out', destroy_user_session_path,
+      :method => :delete%>)
+    </div>
+      <% else %>
+      <div class="signed-in-main">
+        <%= link_to 'Register', new_user_registration_path %> or
+        <%= link_to 'Sign in', new_user_session_path %>
+
+      
+      </div>
+      <% end %>
   </div>
 </div>

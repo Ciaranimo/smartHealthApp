@@ -13,19 +13,36 @@
  *= require_tree .
  *= require_self
  */
+ .navbar{
+   margin-bottom: 0px;
+   padding-bottom: 0;
+ }
  .jumbotron {
  background-image: url("http://www.abetteryou-llc.com/wp-content/uploads/2014/04/medical-services.jpg");
  background-size: cover;
- min-height: 500px;
-margin-top: auto;
+ min-height: 800px;
+margin-top: 0;
 
 }
+
 h1 {
     color: white;
 }
 .signed-in{
   float: right;
 }
+
+.signed-in-main{
+  float: left;
+  color: white;
+}
+
+.signed-in-main a{
+  color: #003d66;
+
+}
+
+
 .container {
   margin-top: auto;
 
@@ -36,5 +53,5 @@ h1 {
   margin: auto;
 }
 .actions{
-  
+
 }

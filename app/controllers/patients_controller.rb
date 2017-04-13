@@ -1,7 +1,9 @@
+require 'my_logger'
+require 'patient_decorator'
+
 class PatientsController < ApplicationController
-  require 'patient_decorator'
-  require 'my_logger'
-  
+
+
 before_filter :authenticate_user!
 before_filter :ensure_admin, :only => [:edit, :destroy]
 
@@ -55,15 +57,15 @@ before_action :set_patient, only: [:show, :edit, :update, :destroy]
     @patient.cost = myPatient.cost
     @patient.observation = myPatient.details
 
-    # retrieve the instance/object of the MyLogger class
-    logger = MyLogger.new()
-    logger.logInformation("A new patient requested: " + @patient.observation)
-
 
     respond_to do |format|
       if @patient.save
         format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
         format.json { render :show, status: :created, location: @patient }
+        # retrieve the instance/object of the MyLogger class
+        logger = MyLogger.send :new
+        logger.logInformation("A new patient has been added - "+@patient.first_name+" " + @patient.last_name + " at "+Time.now.to_s)
+
       else
         format.html { render :new }
         format.json { render json: @patient.errors, status: :unprocessable_entity }
